@@ -1,20 +1,653 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script type="text/javascript">
-<!--
-// Create an array of the links to choose from:
-var links = new Array();
-links[0] = "/new/index.html";
-links[1] = "";
-
-function openLink() {
-   var sites = ['new/index.html', 'old/index.html'];
-    var randomUrl = sites[Math.floor(Math.random() * sites.length )];
-    window.open(randomUrl, "_self");
-}
-//-->
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varun PK | QA Automation Leader & Quality Engineer Portfolio</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Varun PK is a QA Automation & Quality Engineering Leader with 14+ years of experience in building scalable automation frameworks, CI/CD, mobile/web testing, and API performance.">
+    <meta name="keywords" content="QA Leader, Test Automation Engineer, Mobile Testing, API Automation, Performance Testing, CI/CD, Jenkins, Appium, Selenium, Rest-Assured, Bangalore, QA Architect">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body onload="openLink();">
+<body class="dark-theme">
+    <!-- Background Canvas for Interactive Particle Net -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                <span class="logo-text">VARUN<span>.PK</span></span>
+            </a>
+            <nav class="navbar" id="navbar">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#metrics" class="nav-link">Metrics</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#awards" class="nav-link">Awards</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn-primary btn-sm">Hire Me</a>
+                <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-glow"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        QA Automation & Engineering Leader
+                    </div>
+                    <h1 class="hero-title">
+                        Architecting <span class="gradient-text">Flawless Software</span> at Scale
+                    </h1>
+                    <p class="hero-subtitle">
+                        QA Technologist & Team Lead with <strong>14+ years</strong> of expertise in building modular test automation frameworks, accelerating release velocity, and driving massive infrastructure cost savings.
+                    </p>
+                    <div class="hero-actions-group">
+                        <a href="#experience" class="btn-primary">View Experience <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#skills" class="btn-secondary">Explore Skills</a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="hero-feature-item">
+                            <span class="feature-icon"><i class="fa-solid fa-code-fork"></i></span>
+                            <div>
+                                <h4>Scalable Frameworks</h4>
+                                <p>Custom web & mobile pipelines</p>
+                            </div>
+                        </div>
+                        <div class="hero-feature-item">
+                            <span class="feature-icon"><i class="fa-solid fa-gauge-high"></i></span>
+                            <div>
+                                <h4>Performance QA</h4>
+                                <p>Locust & JMeter engineering</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-card-wrapper">
+                        <div class="visual-card main-card">
+                            <div class="card-header">
+                                <div class="dots"><span></span><span></span><span></span></div>
+                                <span class="file-name">automation-framework.yml</span>
+                            </div>
+                            <div class="card-body code-editor">
+                                <pre><code><span class="c-keyword">pipeline:</span>
+  <span class="c-key">agent:</span> <span class="c-val">kubernetes</span>
+  <span class="c-key">stages:</span>
+    <span class="c-key">- name:</span> <span class="c-val">Build & Static Analysis</span>
+    <span class="c-key">- name:</span> <span class="c-val">API & Integration Tests</span>
+      <span class="c-sub">run:</span> <span class="c-str">pytest --cov=core tests/</span>
+    <span class="c-key">- name:</span> <span class="c-val">Parallel Mobile QA</span>
+      <span class="c-sub">provider:</span> <span class="c-str">BrowserStack (Appium)</span>
+    <span class="c-key">- name:</span> <span class="c-val">Performance Benchmarks</span>
+      <span class="c-sub">threshold:</span> <span class="c-str">p99 &lt; 200ms</span>
+  <span class="c-key">status:</span> <span class="c-success"><i class="fa-solid fa-circle-check"></i> PIPELINE STABLE</span></code></pre>
+                            </div>
+                        </div>
+                        <!-- Mini Overlay Stats -->
+                        <div class="overlay-badge stats-badge-1">
+                            <span class="stat-num">€200K+</span>
+                            <span class="stat-desc">Annual Savings</span>
+                        </div>
+                        <div class="overlay-badge stats-badge-2">
+                            <span class="stat-num">14+ Yrs</span>
+                            <span class="stat-desc">QA Expertise</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#about" class="mouse-icon">
+                    <span class="wheel"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">My Objective</span>
+                    <h2 class="section-title">Who is Varun PK?</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-info">
+                        <h3>QA Engineering Leader & Innovation Advocate</h3>
+                        <p>I am a results-driven QA & Automation Engineering Leader with over 14 years of professional experience building scalable test infrastructure for enterprise-grade applications. Throughout my career, I've specialized in replacing outdated, high-maintenance testing pipelines with modular, cloud-integrated frameworks that drive engineering productivity, bulletproof release confidence, and direct fiscal returns.</p>
+                        <p>Currently serving as <strong>Software Technologist 2 at Philips India</strong>, I've led massive migrations away from legacy commercial testing stacks to open-source, robust automation platforms, saving hundreds of thousands of Euros annually. Furthermore, I pioneer the integration of AI-powered tools (including advanced assistants like Windsurf and Anti-Gravity) to accelerate test creation and review cycles.</p>
+                        
+                        <div class="personal-details-box">
+                            <h4>Personal Summary</h4>
+                            <ul class="details-list">
+                                <li><strong>Location:</strong> Bangalore, India</li>
+                                <li><strong>Languages:</strong> English, Hindi, Kannada, Malayalam, Tamil</li>
+                                <li><strong>Interests:</strong> AI Engineering, Cloud Tech, Hackathons, Mentoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-traits">
+                        <div class="trait-card">
+                            <div class="trait-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <h4>AI & Automation First</h4>
+                            <p>Weaving next-gen AI tools into standard testing suites to double automation writing speeds.</p>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-icon"><i class="fa-solid fa-coins"></i></div>
+                            <h4>Business Impact Focus</h4>
+                            <p>Aligning engineering actions with business goals—resulting in massive license cost savings.</p>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-icon"><i class="fa-solid fa-people-group"></i></div>
+                            <h4>Team Leadership</h4>
+                            <p>Mentoring, conducting detailed code reviews, and driving cross-functional QA adoption.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics Section (Graphical Representation 1) -->
+        <section id="metrics" class="metrics-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Performance Indicators</span>
+                    <h2 class="section-title">Measurable Impact & Savings</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="metrics-intro-text">
+                    <p>Testing is not just about finding bugs—it's about improving team velocity, reducing release cycle times, and optimizing infrastructure budgets. Here is the concrete, quantifiable value I've delivered.</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metrics-cards">
+                        <div class="metric-card">
+                            <div class="metric-icon"><i class="fa-solid fa-euro-sign"></i></div>
+                            <div class="metric-value">€200K</div>
+                            <div class="metric-label">Annual License Cost Savings</div>
+                            <p class="metric-desc">Eliminated recurring licensing costs at Philips by migrating department-wide suites off SeeTest to open-source stacks.</p>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                            <div class="metric-value">75%</div>
+                            <div class="metric-label">Reduction in Regression Time</div>
+                            <p class="metric-desc">Parallelized test scripts and migrated execution suites to BrowserStack and cloud VMs, yielding rapid feedback loops.</p>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon"><i class="fa-solid fa-check-double"></i></div>
+                            <div class="metric-value">98%</div>
+                            <div class="metric-label">Framework Stability Index</div>
+                            <p class="metric-desc">Optimized locator strategies and wait mechanisms to resolve flaky tests across web, mobile, and API pipelines.</p>
+                        </div>
+                    </div>
+
+                    <!-- Graphical Charts -->
+                    <div class="chart-container-wrapper">
+                        <div class="chart-card">
+                            <h3>QA Framework ROI & Value Analysis</h3>
+                            <p class="chart-subtitle">Comparing Legacy Commercial Solutions vs. My Custom Open-Source Stack</p>
+                            <div class="chart-holder">
+                                <canvas id="roiChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Core Competencies Section (Graphical Representation 2) -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">My Toolkit</span>
+                    <h2 class="section-title">Technical Expertise & Capabilities</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-dashboard">
+                    <!-- Column 1: Competency Distribution Radar Chart -->
+                    <div class="skills-chart-box">
+                        <div class="chart-card">
+                            <h3>Domain Competency Radar</h3>
+                            <p class="chart-subtitle">Core functional balance across the QA engineering spectrum</p>
+                            <div class="radar-chart-holder">
+                                <canvas id="radarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Progress Bars for Core Skills -->
+                    <div class="skills-levels-box">
+                        <h3>Core Engineering Skills</h3>
+                        
+                        <div class="skill-progress-item">
+                            <div class="skill-details">
+                                <span>Automation Architecture (Selenium/Appium)</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-progress-item">
+                            <div class="skill-details">
+                                <span>API Testing & Integration (Rest-Assured/Postman)</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-progress-item">
+                            <div class="skill-details">
+                                <span>Performance Engineering (Locust/JMeter)</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-progress-item">
+                            <div class="skill-details">
+                                <span>CI/CD Integration & DevOps (Jenkins/GitHub Actions)</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-progress-item">
+                            <div class="skill-details">
+                                <span>Team Leadership & QA Governance</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categorized Tech Stack Tags -->
+                <div class="tech-stack-details">
+                    <h3>Comprehensive Technology Grid</h3>
+                    <div class="tech-grid">
+                        <div class="tech-category-card">
+                            <div class="cat-icon"><i class="fa-solid fa-code"></i></div>
+                            <h4>Languages</h4>
+                            <div class="tags-group">
+                                <span class="tag">Java</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="tech-category-card">
+                            <div class="cat-icon"><i class="fa-solid fa-vial"></i></div>
+                            <h4>Testing Tools</h4>
+                            <div class="tags-group">
+                                <span class="tag">Selenium</span>
+                                <span class="tag">Appium</span>
+                                <span class="tag">TestNG</span>
+                                <span class="tag">Cucumber</span>
+                                <span class="tag">Rest-Assured</span>
+                                <span class="tag">Postman</span>
+                                <span class="tag">WireMock</span>
+                            </div>
+                        </div>
+                        <div class="tech-category-card">
+                            <div class="cat-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <h4>Performance & Proxies</h4>
+                            <div class="tags-group">
+                                <span class="tag">JMeter</span>
+                                <span class="tag">Locust</span>
+                                <span class="tag">Charles Proxy</span>
+                                <span class="tag">WireMock</span>
+                            </div>
+                        </div>
+                        <div class="tech-category-card">
+                            <div class="cat-icon"><i class="fa-solid fa-infinity"></i></div>
+                            <h4>Build & CI/CD</h4>
+                            <div class="tags-group">
+                                <span class="tag">Maven</span>
+                                <span class="tag">Gradle</span>
+                                <span class="tag">Jenkins</span>
+                                <span class="tag">GitHub Actions</span>
+                                <span class="tag">Docker</span>
+                            </div>
+                        </div>
+                        <div class="tech-category-card">
+                            <div class="cat-icon"><i class="fa-solid fa-folder-tree"></i></div>
+                            <h4>Management & Tracking</h4>
+                            <div class="tags-group">
+                                <span class="tag">JIRA</span>
+                                <span class="tag">Bugzilla</span>
+                                <span class="tag">TestRail</span>
+                                <span class="tag">TestLink</span>
+                                <span class="tag">TestPad</span>
+                            </div>
+                        </div>
+                        <div class="tech-category-card">
+                            <div class="cat-icon"><i class="fa-solid fa-cloud"></i></div>
+                            <h4>Cloud & Infrastructure</h4>
+                            <div class="tags-group">
+                                <span class="tag">AWS</span>
+                                <span class="tag">BrowserStack</span>
+                                <span class="tag">Robust Tests</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Career Timeline Section (Graphical Representation 3) -->
+        <section id="experience" class="timeline-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Professional Journey</span>
+                    <h2 class="section-title">14 Years of Career Progression</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="interactive-timeline">
+                    <!-- Timeline Line -->
+                    <div class="timeline-bar"></div>
+
+                    <!-- Timeline Item 1: Philips -->
+                    <div class="timeline-item left-item active" data-job="philips">
+                        <div class="timeline-dot"><i class="fa-solid fa-house-laptop"></i></div>
+                        <div class="timeline-card">
+                            <div class="time-badge">Dec 2022 - Present</div>
+                            <h3>Software Technologist 2</h3>
+                            <h4 class="company-name">Philips India Pvt Ltd., Bengaluru</h4>
+                            <ul class="job-bullets">
+                                <li><strong>Automation Framework Transformation:</strong> Led end-to-end development of a department-wide framework replacing SeeTest, improving execution speed and test scaling.</li>
+                                <li><strong>€200K Annual Savings:</strong> Successfully eliminated high licensing costs by refactoring to robust open-source testing wrappers.</li>
+                                <li><strong>AI Engineering Integration:</strong> Used cutting-edge AI tools (Windsurf/Anti-Gravity) to speed up QA script creation and code-review checks.</li>
+                                <li><strong>Governance & Governance:</strong> Set standards and guidelines for multi-team framework onboarding and continuous compliance.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2: Josh Software -->
+                    <div class="timeline-item right-item" data-job="josh">
+                        <div class="timeline-dot"><i class="fa-solid fa-people-roof"></i></div>
+                        <div class="timeline-card">
+                            <div class="time-badge">Jun 2021 - Dec 2022</div>
+                            <h3>Automation Team Lead / Mobile Lead</h3>
+                            <h4 class="company-name">Josh Software Inc., Bengaluru</h4>
+                            <ul class="job-bullets">
+                                <li><strong>QA Sprint Strategy:</strong> Formulated sprint-level QA strategies, planning execution, and coordinating with Agile stakeholders and product owners.</li>
+                                <li><strong>Appium & Selenium Stacks:</strong> Designed custom cross-platform testing architecture using Java, Python, and TestNG.</li>
+                                <li><strong>Cloud Parallelization:</strong> Built BrowserStack pipelines to enable execution across hundreds of remote iOS & Android configurations.</li>
+                                <li><strong>CI/CD Optimization:</strong> Maintained stable Jenkins pipelines and webhook triggers for continuous developer testing.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3: mfine -->
+                    <div class="timeline-item left-item" data-job="mfine">
+                        <div class="timeline-dot"><i class="fa-solid fa-heart-pulse"></i></div>
+                        <div class="timeline-card">
+                            <div class="time-badge">Sep 2018 - Jun 2021</div>
+                            <h3>QA Automation Engineer</h3>
+                            <h4 class="company-name">mfine, Bengaluru</h4>
+                            <ul class="job-bullets">
+                                <li><strong>Healthcare Workflow Coverage:</strong> Engineered high-coverage UI suites validating crucial appointment and diagnostic user journeys.</li>
+                                <li><strong>Real-time Alerting:</strong> Built reporting integrations connecting QA test results to Slack notifications and interactive dashboards.</li>
+                                <li><strong>API & Performance Tests:</strong> Structured Rest-Assured suites and simulated heavy user loads with JMeter/Postman validation.</li>
+                                <li><strong>Non-Functional QA:</strong> Assessed Android battery drain, network lag, memory leakage, and mobile CPU utilization profiles.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4: Zinios -->
+                    <div class="timeline-item right-item" data-job="zinios">
+                        <div class="timeline-dot"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="timeline-card">
+                            <div class="time-badge">Mar 2018 - Sep 2018</div>
+                            <h3>Quality Assurance Technical Lead</h3>
+                            <h4 class="company-name">Zinios Information Technologies</h4>
+                            <p class="job-summary-text">Directed testing processes, drafted master test strategy maps, designed and launched Selenium/Appium/JMeter script packages, and mentored 5+ junior engineers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5: TechJini -->
+                    <div class="timeline-item left-item" data-job="techjini">
+                        <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
+                        <div class="timeline-card">
+                            <div class="time-badge">Dec 2014 - Feb 2018</div>
+                            <h3>Senior Programmer Analyst – Quality</h3>
+                            <h4 class="company-name">TechJini, Bengaluru</h4>
+                            <p class="job-summary-text">Designed UI web validation suites. Facilitated client demonstrations and successfully earned the <em>Star Performer</em> and <em>Best Performing Team</em> accolades.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 6: Legacy Roles -->
+                    <div class="timeline-item right-item" data-job="legacy">
+                        <div class="timeline-dot"><i class="fa-solid fa-timeline"></i></div>
+                        <div class="timeline-card">
+                            <div class="time-badge">2011 - 2014</div>
+                            <h3>Software Engineer Roles</h3>
+                            <h4 class="company-name">LG Soft India & Core Edge Solutions</h4>
+                            <p class="job-summary-text">Initiated career testing paths. Authored black-box test runs, managed defect cycles, executed sanity iterations, and gained fundamental scripting skills. Won the <em>Best Effort Award</em> at LG Soft.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Honors Section -->
+        <section id="awards" class="awards-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Accolades & Recognition</span>
+                    <h2 class="section-title">Milestones & Certificates</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="awards-grid">
+                    <div class="award-card" data-tilt>
+                        <div class="award-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <span class="award-date">2022</span>
+                        <h3>MVP Award</h3>
+                        <h4 class="award-issuer">Swiggy</h4>
+                        <p>Honored for outstanding engineering contributions, system reliability testing support, and cross-team excellence.</p>
+                    </div>
+
+                    <div class="award-card" data-tilt>
+                        <div class="award-icon"><i class="fa-solid fa-certificate"></i></div>
+                        <span class="award-date">2023</span>
+                        <h3>AI Professional Certificate</h3>
+                        <h4 class="award-issuer">Google AI</h4>
+                        <p>Certified in advanced artificial intelligence foundations, deep learning basics, and modern LLM application workflows.</p>
+                    </div>
+
+                    <div class="award-card" data-tilt>
+                        <div class="award-icon"><i class="fa-solid fa-star"></i></div>
+                        <span class="award-date">2017</span>
+                        <h3>Star Performer Award</h3>
+                        <h4 class="award-issuer">TechJini</h4>
+                        <p>Awarded for leadership in expanding automated framework capabilities and maintaining rapid execution deliverables.</p>
+                    </div>
+
+                    <div class="award-card" data-tilt>
+                        <div class="award-icon"><i class="fa-solid fa-users"></i></div>
+                        <span class="award-date">2017</span>
+                        <h3>Organizing Committee</h3>
+                        <h4 class="award-issuer">Google Cloud Next '17 Bengaluru</h4>
+                        <p>Active member helping coordinate and run technical events, workshops, and cloud QA sessions.</p>
+                    </div>
+
+                    <div class="award-card" data-tilt>
+                        <div class="award-icon"><i class="fa-solid fa-medal"></i></div>
+                        <span class="award-date">2011 & 2012</span>
+                        <h3>Best Effort Award</h3>
+                        <h4 class="award-issuer">LG Soft India</h4>
+                        <p>Recognized multiple times for exceptional dedication, rapid bug identification, and quality diligence during critical releases.</p>
+                    </div>
+
+                    <div class="award-card" data-tilt>
+                        <div class="award-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <span class="award-date">2011</span>
+                        <h3>Diploma in IT</h3>
+                        <h4 class="award-issuer">NTTF, Bangalore</h4>
+                        <p>Academic foundation focusing on core software engineering, databases, networks, and QA fundamentals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">Get In Touch</span>
+                    <h2 class="section-title">Let's Build Quality Together</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Left Column: Contact Cards -->
+                    <div class="contact-info-cards">
+                        <div class="contact-item-card">
+                            <div class="item-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="item-details">
+                                <span>Write to me</span>
+                                <h4>varunpk151@gmail.com</h4>
+                                <a href="mailto:varunpk151@gmail.com" class="action-link">Send Email <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-card">
+                            <div class="item-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="item-details">
+                                <span>Call me</span>
+                                <h4>+91 9886543754</h4>
+                                <a href="tel:+919886543754" class="action-link">Make a Call <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-card">
+                            <div class="item-icon"><i class="fa-brands fa-linkedin"></i></div>
+                            <div class="item-details">
+                                <span>Connect with me</span>
+                                <h4>Varun PK LinkedIn</h4>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="action-link">Visit Profile <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-card">
+                            <div class="item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="item-details">
+                                <span>Located in</span>
+                                <h4>Bangalore, India</h4>
+                                <span class="tag-status"><i class="fa-solid fa-circle"></i> Open to Remote & Relocation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Form -->
+                    <div class="contact-form-box">
+                        <h3>Send a Message</h3>
+                        <form id="contactForm" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+                                    <input type="text" id="name" placeholder="John Doe" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+                                    <input type="email" id="email" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon"><i class="fa-solid fa-pen"></i></span>
+                                    <input type="text" id="subject" placeholder="Project discussion / Hiring Opportunity" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <div class="input-wrapper">
+                                    <textarea id="message" rows="5" placeholder="How can I help you?" required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-primary btn-block" id="submitBtn">
+                                Send Message <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <div id="formStatus" class="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                    <span class="logo-text">VARUN<span>.PK</span></span>
+                </a>
+                <p>Developing robust QA strategies and scalable testing platforms that accelerate deployment and safeguard system integrity.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#metrics">Metrics</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Varun PK. All Rights Reserved. Crafted with <i class="fa-solid fa-heart accent-text"></i> and Anti-Gravity.</p>
+        </div>
+    </footer>
+
+    <!-- Script file -->
+    <script src="script.js"></script>
 </body>
 </html>
