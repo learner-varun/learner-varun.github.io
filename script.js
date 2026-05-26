@@ -20,7 +20,6 @@ function initParticles() {
     const ctx = canvas.getContext('2d');
     
     let particlesArray = [];
-    const numberOfParticles = 70;
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
     
@@ -41,9 +40,18 @@ function initParticles() {
         mouse.y = null;
     });
 
+    // Calculate number of particles dynamically based on screen area to save CPU/battery
+    function getParticleCount() {
+        const area = width * height;
+        return Math.max(15, Math.min(70, Math.floor(area / 25000)));
+    }
+
+    let numberOfParticles = getParticleCount();
+
     window.addEventListener('resize', () => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
+        numberOfParticles = getParticleCount();
         particlesArray = [];
         createParticles();
     });
@@ -79,8 +87,9 @@ function initParticles() {
             if (mouse.x != null && mouse.y != null) {
                 let dx = this.x - mouse.x;
                 let dy = this.y - mouse.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < mouse.radius) {
+                let distanceSq = dx * dx + dy * dy;
+                if (distanceSq < 14400) { // 120 * 120
+                    let distance = Math.sqrt(distanceSq);
                     let force = (mouse.radius - distance) / mouse.radius;
                     let angle = Math.atan2(dy, dx);
                     this.vx += Math.cos(angle) * force * 0.2;
@@ -93,8 +102,8 @@ function initParticles() {
             this.vy *= 0.98;
             
             // Re-apply a tiny base speed if they slow down too much
-            const currentSpeed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
-            if (currentSpeed < 0.1) {
+            const currentSpeedSq = this.vx * this.vx + this.vy * this.vy;
+            if (currentSpeedSq < 0.01) { // 0.1 * 0.1
                 this.vx += (Math.random() - 0.5) * 0.1;
                 this.vy += (Math.random() - 0.5) * 0.1;
             }
@@ -109,22 +118,26 @@ function initParticles() {
         }
     }
 
-    // Connect particles near each other
+    // Connect particles near each other (Optimized distance checks)
     function connect() {
         let opacityValue = 1;
-        for (let a = 0; a < particlesArray.length; a++) {
-            for (let b = a + 1; b < particlesArray.length; b++) {
-                let dx = particlesArray[a].x - particlesArray[b].x;
-                let dy = particlesArray[a].y - particlesArray[b].y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
+        const len = particlesArray.length;
+        for (let a = 0; a < len; a++) {
+            const pA = particlesArray[a];
+            for (let b = a + 1; b < len; b++) {
+                const pB = particlesArray[b];
+                let dx = pA.x - pB.x;
+                let dy = pA.y - pB.y;
+                let distSq = dx * dx + dy * dy;
                 
-                if (distance < 110) {
+                if (distSq < 12100) { // 110 * 110 (skip costly Math.sqrt if out of range)
+                    let distance = Math.sqrt(distSq);
                     opacityValue = 1 - (distance / 110);
                     ctx.strokeStyle = `rgba(79, 172, 254, ${opacityValue * 0.15})`;
                     ctx.lineWidth = 1;
                     ctx.beginPath();
-                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.moveTo(pA.x, pA.y);
+                    ctx.lineTo(pB.x, pB.y);
                     ctx.stroke();
                 }
             }
@@ -365,27 +378,32 @@ function initScrollAnimations() {
         skillsObserver.observe(skillsSection);
     }
     
-    // 2. Active Menu Link Highlighting on Scroll
+    // 2. Active Menu Link Highlighting on Scroll (Optimized using IntersectionObserver instead of scroll event)
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px', // Triggers when the section dominates the viewport
+        threshold: 0
+    };
+    
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
             }
         });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
+    }, observerOptions);
+    
+    sections.forEach(section => navObserver.observe(section));
 
     // 3. Interactive Timeline Highlight on Scroll
     const timelineItems = document.querySelectorAll('.timeline-item');

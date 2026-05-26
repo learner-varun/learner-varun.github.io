@@ -656,6 +656,7 @@ section {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: var(--transition-smooth);
+    will-change: transform;
 }
 
 .trait-card:hover {
@@ -1039,6 +1040,7 @@ section {
     position: relative;
     transition: var(--transition-smooth);
     cursor: pointer;
+    will-change: transform;
 }
 
 .timeline-item:hover .timeline-card {
@@ -1148,6 +1150,7 @@ section {
     transition: var(--transition-smooth);
     transform-style: preserve-3d;
     perspective: 1000px;
+    will-change: transform;
 }
 
 .award-card:hover {
@@ -1223,6 +1226,7 @@ section {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: var(--transition-smooth);
+    will-change: transform;
 }
 
 .contact-item-card:hover {

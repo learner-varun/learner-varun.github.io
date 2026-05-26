@@ -11,12 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Chart.js for data visualization -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome Icons (Asynchronous non-blocking load) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <!-- Chart.js (Deferred for performance) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <!-- Custom logic (Deferred for performance) -->
+    <script src="script.js" defer></script>
 </head>
 <body class="dark-theme">
     <!-- Background Canvas for Interactive Particle Net -->
@@ -647,7 +650,5 @@
         </div>
     </footer>
 
-    <!-- Script file -->
-    <script src="script.js"></script>
 </body>
 </html>
