@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varun PK | QA Automation Leader & Quality Engineer Portfolio</title>
+    <title>Varun PK | QA Automation & Quality Engineering Leader Portfolio</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Varun PK is a QA Automation & Quality Engineering Leader with 14+ years of experience in building scalable automation frameworks, CI/CD, mobile/web testing, and API performance.">
+    <meta name="description" content="Varun PK is a QA Automation & Quality Engineering Leader with 14+ years of experience in building scalable open-source automation frameworks, CI/CD, mobile/web testing, and API performance.">
     <meta name="keywords" content="QA Leader, Test Automation Engineer, Mobile Testing, API Automation, Performance Testing, CI/CD, Jenkins, Appium, Selenium, Rest-Assured, Bangalore, QA Architect">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +17,15 @@
     <!-- Chart.js (Deferred for performance) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-white.css">
     <!-- Custom logic (Deferred for performance) -->
-    <script src="script.js" defer></script>
+    <script src="script-white.js" defer></script>
 </head>
-<body class="dark-theme">
-    <!-- Background Canvas for Interactive Particle Net -->
-    <canvas id="particleCanvas"></canvas>
+<body>
+    <!-- Fixed Grid and Drifting Background Blobs -->
+    <div class="bg-grid"></div>
+    <div class="bg-blob-1"></div>
+    <div class="bg-blob-2"></div>
 
     <!-- Header Navigation -->
     <header class="header">
@@ -42,10 +44,9 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="index-white.html" class="theme-toggle-btn">
-                    <i class="fa-solid fa-sun"></i> Light Theme
+                <a href="index.html" class="theme-toggle-btn">
+                    <i class="fa-solid fa-moon"></i> Dark Theme
                 </a>
-                <a href="#contact" class="btn-primary btn-sm">Hire Me</a>
                 <button class="mobile-nav-toggle" aria-label="Toggle navigation">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -59,7 +60,6 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero-section">
-            <div class="hero-glow"></div>
             <div class="container hero-container">
                 <div class="hero-content">
                     <div class="badge">
@@ -93,43 +93,96 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Right Column: Interactive QA Pipeline Simulator -->
                 <div class="hero-visual">
                     <div class="visual-card-wrapper">
-                        <div class="visual-card main-card">
-                            <div class="card-header">
+                        <!-- Drifting Overlay Badges -->
+                        <div class="floating-overlay-badge badge-pos-1">
+                            <span class="badge-val">€200K+</span>
+                            <span class="badge-lbl">Annual Savings</span>
+                        </div>
+                        <div class="floating-overlay-badge badge-pos-2">
+                            <span class="badge-val">14+ Yrs</span>
+                            <span class="badge-lbl">QA Expertise</span>
+                        </div>
+
+                        <!-- Simulator Card -->
+                        <div class="pipeline-simulator">
+                            <div class="pipeline-header">
                                 <div class="dots"><span></span><span></span><span></span></div>
-                                <span class="file-name">automation-framework.yml</span>
+                                <span class="pipeline-title"><i class="fa-solid fa-square-poll-vertical"></i> TEST PIPELINE FEEDBACK LOOP</span>
                             </div>
-                            <div class="card-body code-editor">
-                                <pre><code><span class="c-keyword">pipeline:</span>
-  <span class="c-key">agent:</span> <span class="c-val">kubernetes</span>
-  <span class="c-key">stages:</span>
-    <span class="c-key">- name:</span> <span class="c-val">Build & Static Analysis</span>
-    <span class="c-key">- name:</span> <span class="c-val">API & Integration Tests</span>
-      <span class="c-sub">run:</span> <span class="c-str">pytest --cov=core tests/</span>
-    <span class="c-key">- name:</span> <span class="c-val">Parallel Mobile QA</span>
-      <span class="c-sub">provider:</span> <span class="c-str">BrowserStack (Appium)</span>
-    <span class="c-key">- name:</span> <span class="c-val">Performance Benchmarks</span>
-      <span class="c-sub">threshold:</span> <span class="c-str">p99 &lt; 200ms</span>
-  <span class="c-key">status:</span> <span class="c-success"><i class="fa-solid fa-circle-check"></i> PIPELINE STABLE</span></code></pre>
+                            <div class="pipeline-body">
+                                <div class="pipeline-stages">
+                                    <div class="stage-item pending" id="stage1">
+                                        <div class="stage-info">
+                                            <div class="stage-num" data-num="1">1</div>
+                                            <div>
+                                                <span class="stage-name">Static Analysis & Lints</span>
+                                                <div class="stage-details">Check style compliance and vulnerability logs</div>
+                                            </div>
+                                        </div>
+                                        <div class="stage-status">
+                                            <span class="status-waiting"><i class="fa-regular fa-clock"></i> Pending</span>
+                                        </div>
+                                    </div>
+                                    <div class="stage-item pending" id="stage2">
+                                        <div class="stage-info">
+                                            <div class="stage-num" data-num="2">2</div>
+                                            <div>
+                                                <span class="stage-name">API Integration Coverage</span>
+                                                <div class="stage-details">Rest-Assured JSON validations & mock checks</div>
+                                            </div>
+                                        </div>
+                                        <div class="stage-status">
+                                            <span class="status-waiting"><i class="fa-regular fa-clock"></i> Pending</span>
+                                        </div>
+                                    </div>
+                                    <div class="stage-item pending" id="stage3">
+                                        <div class="stage-info">
+                                            <div class="stage-num" data-num="3">3</div>
+                                            <div>
+                                                <span class="stage-name">Parallel Mobile Verification</span>
+                                                <div class="stage-details">Appium parallel scripts on BrowserStack grid</div>
+                                            </div>
+                                        </div>
+                                        <div class="stage-status">
+                                            <span class="status-waiting"><i class="fa-regular fa-clock"></i> Pending</span>
+                                        </div>
+                                    </div>
+                                    <div class="stage-item pending" id="stage4">
+                                        <div class="stage-info">
+                                            <div class="stage-num" data-num="4">4</div>
+                                            <div>
+                                                <span class="stage-name">Locust Performance Gates</span>
+                                                <div class="stage-details">Simulated concurrent load stress checks</div>
+                                            </div>
+                                        </div>
+                                        <div class="stage-status">
+                                            <span class="status-waiting"><i class="fa-regular fa-clock"></i> Pending</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pipeline-controls">
+                                    <div class="pipeline-metrics-summary">
+                                        <div class="pipeline-metric-unit">
+                                            <span>CYCLE DURATION</span>
+                                            <span id="pipelineTimeVal">48h</span>
+                                        </div>
+                                        <div class="pipeline-metric-unit">
+                                            <span>LICENSING SAVINGS</span>
+                                            <span id="pipelineSavingsVal">€0</span>
+                                        </div>
+                                    </div>
+                                    <button class="run-pipeline-btn" id="runPipelineBtn">
+                                        <i class="fa-solid fa-play"></i> Run Simulation
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Mini Overlay Stats -->
-                        <div class="overlay-badge stats-badge-1">
-                            <span class="stat-num">€200K+</span>
-                            <span class="stat-desc">Annual Savings</span>
-                        </div>
-                        <div class="overlay-badge stats-badge-2">
-                            <span class="stat-num">14+ Yrs</span>
-                            <span class="stat-desc">QA Expertise</span>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="scroll-indicator">
-                <a href="#about" class="mouse-icon">
-                    <span class="wheel"></span>
-                </a>
             </div>
         </section>
 
@@ -177,7 +230,7 @@
             </div>
         </section>
 
-        <!-- Key Metrics Section (Graphical Representation 1) -->
+        <!-- Key Metrics Section -->
         <section id="metrics" class="metrics-section">
             <div class="container">
                 <div class="section-header">
@@ -193,21 +246,27 @@
                 <div class="metrics-grid">
                     <div class="metrics-cards">
                         <div class="metric-card">
-                            <div class="metric-icon"><i class="fa-solid fa-euro-sign"></i></div>
-                            <div class="metric-value">€200K</div>
-                            <div class="metric-label">Annual License Cost Savings</div>
+                            <div class="metric-icon-wrapper"><i class="fa-solid fa-euro-sign"></i></div>
+                            <div class="metric-value-wrapper">
+                                <div class="metric-val" data-target="200" data-prefix="€" data-suffix="K+">€0</div>
+                                <div class="metric-lbl">Annual Tool Licensing Savings</div>
+                            </div>
                             <p class="metric-desc">Eliminated recurring licensing costs at Philips by migrating department-wide suites off SeeTest to open-source stacks.</p>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                            <div class="metric-value">75%</div>
-                            <div class="metric-label">Reduction in Regression Time</div>
+                            <div class="metric-icon-wrapper"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                            <div class="metric-value-wrapper">
+                                <div class="metric-val" data-target="75" data-suffix="%">0%</div>
+                                <div class="metric-lbl">Reduction in Regression Time</div>
+                            </div>
                             <p class="metric-desc">Parallelized test scripts and migrated execution suites to BrowserStack and cloud VMs, yielding rapid feedback loops.</p>
                         </div>
                         <div class="metric-card">
-                            <div class="metric-icon"><i class="fa-solid fa-check-double"></i></div>
-                            <div class="metric-value">98%</div>
-                            <div class="metric-label">Framework Stability Index</div>
+                            <div class="metric-icon-wrapper"><i class="fa-solid fa-check-double"></i></div>
+                            <div class="metric-value-wrapper">
+                                <div class="metric-val" data-target="98" data-suffix="%">0%</div>
+                                <div class="metric-lbl">Framework Stability Index</div>
+                            </div>
                             <p class="metric-desc">Optimized locator strategies and wait mechanisms to resolve flaky tests across web, mobile, and API pipelines.</p>
                         </div>
                     </div>
@@ -218,7 +277,7 @@
                             <h3>QA Framework ROI & Value Analysis</h3>
                             <p class="chart-subtitle">Comparing Legacy Commercial Solutions vs. My Custom Open-Source Stack</p>
                             <div class="chart-holder">
-                                <canvas id="roiChart"></canvas>
+                                <canvas id="roiChartWhite"></canvas>
                             </div>
                         </div>
                     </div>
@@ -226,7 +285,7 @@
             </div>
         </section>
 
-        <!-- Skills & Core Competencies Section (Graphical Representation 2) -->
+        <!-- Skills & Core Competencies Section -->
         <section id="skills" class="skills-section">
             <div class="container">
                 <div class="section-header">
@@ -236,13 +295,13 @@
                 </div>
 
                 <div class="skills-dashboard">
-                    <!-- Column 1: Competency Distribution Radar Chart -->
+                    <!-- Column 1: Radar Chart -->
                     <div class="skills-chart-box">
                         <div class="chart-card">
                             <h3>Domain Competency Radar</h3>
                             <p class="chart-subtitle">Core functional balance across the QA engineering spectrum</p>
                             <div class="radar-chart-holder">
-                                <canvas id="radarChart"></canvas>
+                                <canvas id="radarChartWhite"></canvas>
                             </div>
                         </div>
                     </div>
@@ -257,7 +316,7 @@
                                 <span>95%</span>
                             </div>
                             <div class="progress-bar-bg">
-                                <div class="progress-bar-fill" style="width: 95%"></div>
+                                <div class="progress-bar-fill" data-width="95%"></div>
                             </div>
                         </div>
 
@@ -267,7 +326,7 @@
                                 <span>90%</span>
                             </div>
                             <div class="progress-bar-bg">
-                                <div class="progress-bar-fill" style="width: 90%"></div>
+                                <div class="progress-bar-fill" data-width="90%"></div>
                             </div>
                         </div>
 
@@ -277,7 +336,7 @@
                                 <span>85%</span>
                             </div>
                             <div class="progress-bar-bg">
-                                <div class="progress-bar-fill" style="width: 85%"></div>
+                                <div class="progress-bar-fill" data-width="85%"></div>
                             </div>
                         </div>
 
@@ -287,7 +346,7 @@
                                 <span>88%</span>
                             </div>
                             <div class="progress-bar-bg">
-                                <div class="progress-bar-fill" style="width: 88%"></div>
+                                <div class="progress-bar-fill" data-width="88%"></div>
                             </div>
                         </div>
 
@@ -297,7 +356,7 @@
                                 <span>92%</span>
                             </div>
                             <div class="progress-bar-bg">
-                                <div class="progress-bar-fill" style="width: 92%"></div>
+                                <div class="progress-bar-fill" data-width="92%"></div>
                             </div>
                         </div>
                     </div>
@@ -377,7 +436,7 @@
             </div>
         </section>
 
-        <!-- Career Timeline Section (Graphical Representation 3) -->
+        <!-- Career Timeline Section -->
         <section id="experience" class="timeline-section">
             <div class="container">
                 <div class="section-header">
@@ -387,11 +446,13 @@
                 </div>
 
                 <div class="interactive-timeline">
-                    <!-- Timeline Line -->
-                    <div class="timeline-bar"></div>
+                    <!-- Animating timeline bar track -->
+                    <div class="timeline-bar">
+                        <div class="timeline-bar-fill"></div>
+                    </div>
 
                     <!-- Timeline Item 1: Philips -->
-                    <div class="timeline-item left-item active" data-job="philips">
+                    <div class="timeline-item left-item" data-job="philips">
                         <div class="timeline-dot"><i class="fa-solid fa-house-laptop"></i></div>
                         <div class="timeline-card">
                             <div class="time-badge">Dec 2022 - Present</div>
@@ -471,6 +532,36 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Custom Interactive QA Solution console widget (WOW factor) -->
+                <div class="qa-console-container">
+                    <div class="console-header">
+                        <div class="console-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="console-title">Interactive QA Solution Console v1.0.4</div>
+                        <div><i class="fa-solid fa-terminal"></i></div>
+                    </div>
+                    <div class="console-body">
+                        <div class="console-selector-row">
+                            <label for="qaChallengeSelect">Select an Engineering Challenge to solve: </label>
+                            <select id="qaChallengeSelect">
+                                <option value="flaky-tests">Flaky Web/Mobile Regression tests</option>
+                                <option value="licensing">High recurring tooling licensing costs</option>
+                                <option value="slow-ci">Sequential slow CI pipelines</option>
+                                <option value="api-perf">API instability and latency issues</option>
+                            </select>
+                        </div>
+                        <div class="console-screen">
+                            <div class="console-input-line">
+                                <span>varun-pk@portfolio:~$</span> run-qa-diagnostics --target=system
+                            </div>
+                            <div id="consoleOutput" class="console-output">
+                                <!-- Outputs dynamically via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -484,7 +575,7 @@
                 </div>
 
                 <div class="awards-grid">
-                    <div class="award-card" data-tilt>
+                    <div class="award-card">
                         <div class="award-icon"><i class="fa-solid fa-trophy"></i></div>
                         <span class="award-date">2022</span>
                         <h3>MVP Award</h3>
@@ -492,7 +583,7 @@
                         <p>Honored for outstanding engineering contributions, system reliability testing support, and cross-team excellence.</p>
                     </div>
 
-                    <div class="award-card" data-tilt>
+                    <div class="award-card">
                         <div class="award-icon"><i class="fa-solid fa-certificate"></i></div>
                         <span class="award-date">2023</span>
                         <h3>AI Professional Certificate</h3>
@@ -500,7 +591,7 @@
                         <p>Certified in advanced artificial intelligence foundations, deep learning basics, and modern LLM application workflows.</p>
                     </div>
 
-                    <div class="award-card" data-tilt>
+                    <div class="award-card">
                         <div class="award-icon"><i class="fa-solid fa-star"></i></div>
                         <span class="award-date">2017</span>
                         <h3>Star Performer Award</h3>
@@ -508,7 +599,7 @@
                         <p>Awarded for leadership in expanding automated framework capabilities and maintaining rapid execution deliverables.</p>
                     </div>
 
-                    <div class="award-card" data-tilt>
+                    <div class="award-card">
                         <div class="award-icon"><i class="fa-solid fa-users"></i></div>
                         <span class="award-date">2017</span>
                         <h3>Organizing Committee</h3>
@@ -516,7 +607,7 @@
                         <p>Active member helping coordinate and run technical events, workshops, and cloud QA sessions.</p>
                     </div>
 
-                    <div class="award-card" data-tilt>
+                    <div class="award-card">
                         <div class="award-icon"><i class="fa-solid fa-medal"></i></div>
                         <span class="award-date">2011 & 2012</span>
                         <h3>Best Effort Award</h3>
@@ -524,7 +615,7 @@
                         <p>Recognized multiple times for exceptional dedication, rapid bug identification, and quality diligence during critical releases.</p>
                     </div>
 
-                    <div class="award-card" data-tilt>
+                    <div class="award-card">
                         <div class="award-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                         <span class="award-date">2011</span>
                         <h3>Diploma in IT</h3>
@@ -587,7 +678,7 @@
                     <!-- Right Column: Interactive Form -->
                     <div class="contact-form-box">
                         <h3>Send a Message</h3>
-                        <form id="contactForm" onsubmit="return false;">
+                        <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
                                 <div class="input-wrapper">
@@ -652,6 +743,5 @@
             <p>&copy; 2026 Varun PK. All Rights Reserved. Crafted with <i class="fa-solid fa-heart accent-text"></i> and Anti-Gravity.</p>
         </div>
     </footer>
-
 </body>
 </html>
