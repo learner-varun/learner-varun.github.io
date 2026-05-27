@@ -1810,6 +1810,9 @@ a {
     .header-actions {
         margin-right: 2.5rem;
     }
+    .header-actions .btn-primary {
+        display: none;
+    }
     .hero-title {
         font-size: 2.5rem;
     }
